@@ -1,6 +1,8 @@
 from word_list import word_list
 import random
 from prettytable import PrettyTable
+# import os module
+import os
 
 
 
@@ -90,7 +92,7 @@ while start_game == True:
   start = input('Press 1 to learn how to play, press 2 to choose difficulty: \n')
   if start == '1':
     print('Instructions')
-  challenge = input("Press 1 for easy mode, 2 for hard mode and 3 for super hard mode: /n")
+  challenge = input("Press 1 for easy mode, 2 for hard mode and 3 for super hard mode: \n")
   max_attempts = num_of_attempts(challenge)
   count = max_attempts + 1
   play_game = True

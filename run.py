@@ -30,16 +30,22 @@ complete_guess = True
 table = PrettyTable()
 
 
+def colored(r, g, b, text):
+  return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
+
+
+
+
 def guess_match(theanswer, theguess):
   count = 0
   clue = ''
   for letter in theguess:
     if letter == theanswer[count]:
-      clue += letter.upper() + ' '
+      clue += colored(0, 255, 0, letter.upper())
     elif letter in theanswer:
-      clue += letter.lower() + ' '
+      clue += colored(255, 255, 0, letter )
     else:
-      clue += (letter + '\u0336') + ' '
+      clue += colored(255, 0, 0, letter)
     count += 1
   return clue
 
@@ -101,6 +107,7 @@ while start_game == True:
         complete_guess = False
       else:
         complete_guess = True
+        cls()
       while complete_guess == True:
         if challenge == '2':
           if guess_1 == 1:

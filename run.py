@@ -112,7 +112,7 @@ challenge = input(
 max_attempts = num_of_attempts(challenge)
 count = max_attempts + 1
 play_game = True
- while play_game == True:
+while play_game == True:
       table.clear()
        if max_attempts == 0:
             Lose = pyfiglet.figlet_format("You Lose!", justify="center")

@@ -174,28 +174,14 @@ while start_game == True:
             guess_3 = 0
             guess_4 = 0
             max_attempts = 0
-            play_again = input('Would you like to play again? Y or N')
-            if play_again.lower() == 'n':
-              start_game = False
-              play_game = False
-              attempts1.clear()
-              attempts2.clear()
-              attempts3.clear()
-              attempts4.clear()
-              break()
-            else:
-              play_game = False
-              attempts1.clear()
-              attempts2.clear()
-              attempts3.clear()
-              attempts4.clear()
-          complete_guess = False
-          table.add_column("Wordle", attempts1)
-          table.add_column('Super', attempts2)
-          table.add_column("Hard", attempts3)
-          table.add_column('Mode', attempts4)
-          print(table)
-          complete_guess = False
+            restart_game()
+          else:
+            complete_guess = False
+            table.add_column("Wordle", attempts1)
+            table.add_column('Super', attempts2)
+            table.add_column("Hard", attempts3)
+            table.add_column('Mode', attempts4)
+            print(table)
         else:
           attempts1.append(guess_match(answer1, word))
           table.add_column("Wordle", attempts1)

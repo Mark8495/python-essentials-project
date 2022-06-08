@@ -60,6 +60,8 @@ def num_of_attempts(challenge):
     return 6
 
 def win_message(remain):
+  win = pyfiglet.figlet_format("You Win!", justify="center")
+  print(win)
   print('Woo you got all the answers')
   print(f'You got it in {remain} guesses') 
 
@@ -132,8 +134,7 @@ while start_game == True:
           if word == answer2:
               guess_2 = 1
           if (guess_1 + guess_2) == 2:
-            print('Woo you got both answers')
-            print(f'You got it in {remain} guesses')
+            win_message(remain)
             guess_1 = 0
             guess_2 = 0
             max_attempts = 0
@@ -170,8 +171,7 @@ while start_game == True:
               guess_4 = 1
 
           if (guess_1 + guess_2 + guess_3 + guess_4) == 4:
-            print('Woo you got all the answers')
-            print(f'You got it in {remain} guesses')
+            win_message(remain)
             guess_1 = 0
             guess_2 = 0
             guess_3 = 0
@@ -190,8 +190,7 @@ while start_game == True:
           table.add_column("Wordle", attempts1)
           print(table)
           if word == answer1:
-            print("Congratulations you got it.")
-            print(f"It only took you {remain} guesses!")
+            win_message(remain)
             max_attempts = 0
             restart_game()
           complete_guess = False

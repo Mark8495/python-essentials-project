@@ -3,6 +3,7 @@ import random
 from prettytable import PrettyTable
 # import os module
 import os
+import pyfiglet
 
 
 

@@ -21,10 +21,6 @@ attempts1 = []
 attempts2 = []
 attempts3 = []
 attempts4 = []
-attempts1.clear()
-attempts2.clear()
-attempts3.clear()
-attempts4.clear()
 guess_1 = 0
 guess_2 = 0
 guess_3 = 0
@@ -62,6 +58,10 @@ def num_of_attempts(challenge):
     return 8
   else:
     return 6
+
+def win_message(remain):
+  print('Woo you got all the answers')
+  print(f'You got it in {remain} guesses') 
 
 def restart_game():
   restart = input('Would you like to play again. Y or N')
@@ -104,6 +104,8 @@ while start_game == True:
   while play_game == True:
     table.clear()
     if max_attempts == 0:
+      Lose = pyfiglet.figlet_format("You Lose!", justify="center")
+      print(Lose)
       restart_game()
     else:
       remain = count - max_attempts
@@ -177,12 +179,12 @@ while start_game == True:
             max_attempts = 0
             restart_game()
           else:
-            complete_guess = False
             table.add_column("Wordle", attempts1)
             table.add_column('Super', attempts2)
             table.add_column("Hard", attempts3)
             table.add_column('Mode', attempts4)
             print(table)
+          complete_guess = False
         else:
           attempts1.append(guess_match(answer1, word))
           table.add_column("Wordle", attempts1)

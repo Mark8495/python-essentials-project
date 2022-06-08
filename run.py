@@ -178,6 +178,7 @@ while start_game == True:
               attempts2.clear()
               attempts3.clear()
               attempts4.clear()
+              break()
             else:
               play_game = False
               attempts1.clear()

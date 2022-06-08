@@ -75,6 +75,10 @@ def restart_game():
     attempts3.clear()
     attempts4.clear()
 
+welcome = pyfiglet.figlet_format("Wordel", justify="center")
+print(welcome)
+print("Word guessing command line game".center(80) + "\n")
+print("Created by Mark Byrne".center(80) + "\n")
 
 start_game = True
 play_game = False
